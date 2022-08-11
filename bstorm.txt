@@ -1,0 +1,45 @@
+Event listener pass keycode into function
+    check the data-key for each element
+        65 = A = clap;
+        83 = S = hihat;
+        68 = D = kick;
+        70 = F = openhat;
+        71 = G = boom;
+        72 = H = ride;
+        74 = J = snare;
+        75 = K = tom;
+        76 = L = tink;
+
+create function that takes datakey as an argument
+    plays the requesite data-key:sound pairing.
+
+playSound(data-key)
+
+switch (playSound){
+    case 65:
+        play clap.wav;
+    case 83:
+        paly hihat;
+}
+
+
+this function needs to have two things. the key being pressed and the sound
+being played by the keypress.
+
+
+    const inputField = document.querySelector("body");
+    let soundBuffer = "";
+
+    inputField.addEventListener("keydown", (key) => {
+        console.log(`you pressed ${key.keyCode}`);
+        playSound(key.keyCode);
+    });
+
+function playSound(keyCode){
+    soundBuffer = document.querySelector("audio[data-key="keyCode"]")
+    soundBuffer.play();
+
+}
+
+https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
+https://bobbyhadz.com/blog/javascript-get-element-by-data-attribute
