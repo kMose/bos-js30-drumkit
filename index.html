@@ -60,7 +60,15 @@
 <script>
 
     const inputField = document.querySelector("body");
-    
+    const instrumentButtons = document.querySelectorAll(".key");
+
+    instrumentButtons.forEach(element => {
+      element.addEventListener('click', () => {
+        transformButton(element.dataset.key)
+        playSound(element.dataset.key);
+      })
+      
+    });
 
     inputField.addEventListener("keydown", (key) => {
         console.log(`you pressed ${key.keyCode}`);
